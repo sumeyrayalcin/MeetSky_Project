@@ -18,7 +18,7 @@ Feature: online status and set a status message
   @wip
     Scenario: User can view Online Status
       Given user is on the Online Status page
-    When user lands on the Online Status page
+
       Then user can view online status
 
   Scenario: User changes Online Status

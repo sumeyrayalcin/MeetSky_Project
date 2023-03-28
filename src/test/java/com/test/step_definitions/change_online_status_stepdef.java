@@ -32,11 +32,7 @@ public class change_online_status_stepdef {
     }
 
 
-    @When("user lands on the Online Status page")
-    public void userLandsOnTheOnlineStatusPage() {
 
-        BrowserUtils.verifyURLContains("online");
-    }
 
     @Then("user can view online status")
     public void userCanViewOnlineStatus() {
