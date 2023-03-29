@@ -24,42 +24,61 @@ public class Change_Online_Status extends BasePage{
 
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[2]/div[3]/label")
-    public WebElement DoNotDisturb_Status;
+    public WebElement doNotDisturb_Status;
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[2]/div[2]/label")
-    public WebElement Away_Status;
+    public WebElement away_Status;
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[2]/div[2]/label")
-    public WebElement Invisible_Status;
+    public WebElement invisible_Status;
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[5]/div[1]/span[2]")
-    public WebElement InAMeeting_Status_Message;
+    public WebElement inAMeeting_Status_Message;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[5]/div[2]/span[2]")
-    public WebElement Commuting_Status_Message;
+    @FindBy(linkText ="Commuting" )
+    public WebElement commuting_Status_Message;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[5]/div[3]/span[2]")
-    public WebElement WorkingRemotely_Status_Message;
+    @FindBy(linkText = "Working remotely")
+    public WebElement workingRemotely_Status_Message;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[5]/div[4]/span[2]")
-    public WebElement OutSick_Status_Message;
+    @FindBy(linkText = "Out sick")
+    public WebElement outSick_Status_Message;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[5]/div[5]/span[2]")
-    public WebElement Vacationing_Status_Message;
+    @FindBy(linkText ="Vacationing")
+    public WebElement vacationing_Status_Message;
+
+    @FindBy(xpath = "//input[@class='multiselect__input']")
+    public WebElement clearingAfter_Status_Message;
+
+
+
+
+
+
+    @FindBy(xpath = "//*[@id=\"expand\"]/div/div")
+    public WebElement onlineStatusPageTitle;
+
+  //  @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[4]/form/input")
+  //  public WebElement whatIsYourStatusEmoji;
+
+    @FindBy(xpath = "//button[@class='custom-input__emoji-button']")
+    public WebElement emoji_message;
+
+    @FindBy(xpath = "//*[@id=\"emoji-mart-list\"]")
+    public WebElement any_chosen_emoji_in_online_status_message;
+
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[6]/div/div[2]/input")
-    public WebElement ClearingAfter_Status_Message;
+    public WebElement sets_time_clear_status_message_automatically;
+
 
 
     @FindBy( linkText ="Clear status message")
-    public WebElement Clear_Status_Message;
-
-    @FindBy( linkText ="Set status message")
-    public WebElement Set_Status_Message;
+    public WebElement clear_Status_Message;
 
 
-    @FindBy(xpath = "//h3[.='Online status']")
-    public WebElement onlineStatusPageTitle;
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[7]/button[2]")
+    public WebElement setStatusMessage;
 
 
 
