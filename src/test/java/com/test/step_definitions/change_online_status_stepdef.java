@@ -14,6 +14,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class change_online_status_stepdef {
     BasePage basePage = new BasePage();
     Change_Online_Status change_online_status = new Change_Online_Status();
@@ -53,7 +56,7 @@ public class change_online_status_stepdef {
 
 
     @When("the user clicks the Away status option")
-    public void theUserClicksTheAwayStatusOption()  {
+    public void theUserClicksTheAwayStatusOption() {
 
         BrowserUtils.sleep(10);
 
@@ -111,6 +114,7 @@ public class change_online_status_stepdef {
 
         Assert.assertTrue(change_online_status.onlineStatusPageTitle.isDisplayed());
     }
+
     @When("the user clicks the Online status option")
     public void theUserClicksTheOnlineStatusOption() {
         BrowserUtils.sleep(10);
@@ -118,6 +122,7 @@ public class change_online_status_stepdef {
         change_online_status.online_status.click();
         BrowserUtils.sleep(10);
     }
+
     @Then("the user's status changed to Online")
     public void theUserSStatusChangedToOnline() {
         BrowserUtils.sleep(10);
@@ -237,14 +242,13 @@ public class change_online_status_stepdef {
 
         BrowserUtils.sleep(10);
 
-        Assert.assertEquals(change_online_status.any_chosen_emoji_in_online_status_message,currentlySelectedOption);
+        Assert.assertEquals(change_online_status.any_chosen_emoji_in_online_status_message, currentlySelectedOption);
 
         BrowserUtils.sleep(10);
 
 
-
-
     }
+
     @When("the user clicks a time to clear the status message automatically")
     public void theUserClicksATimeToClearTheStatusMessageAutomatically() {
         BrowserUtils.sleep(10);
@@ -254,8 +258,7 @@ public class change_online_status_stepdef {
 
         WebElement currentlySelectedOption = sets_time_clear_Dropdown.getFirstSelectedOption();
 
-        Assert.assertEquals(change_online_status.any_chosen_emoji_in_online_status_message,currentlySelectedOption);
-
+        Assert.assertEquals(change_online_status.any_chosen_emoji_in_online_status_message, currentlySelectedOption);
 
 
         BrowserUtils.sleep(10);
@@ -273,10 +276,7 @@ public class change_online_status_stepdef {
         Assert.assertTrue(change_online_status.onlineStatusPageTitle.isDisplayed());
 
 
-
-
     }
-
 
 
     @When("the user click the Clear status message")
@@ -285,8 +285,6 @@ public class change_online_status_stepdef {
 
         change_online_status.clear_Status_Message.click();
         BrowserUtils.sleep(10);
-
-
 
 
     }
@@ -314,5 +312,40 @@ public class change_online_status_stepdef {
 
 
 
+
+
+
+    @When("user clicks the  status option {string}")
+    public void userClicksTheStatusOption(String statusOption) {
+        List<WebElement> statusOptions;
+
+
+        statusOptions = Arrays.asList(change_online_status.away_Status, change_online_status.doNotDisturb_Status, change_online_status.invisible_Status, change_online_status.online_status);
+
+
+        BrowserUtils.sleep(10);
+
+        for (WebElement option : statusOptions) {
+            if (option.getAttribute("class").startsWith("user-status-online-select__label")) {
+                option.click();
+                break;
+
+            }
+
+            BrowserUtils.sleep(10);
+        }
+    }
+
+    @Then("user's status is changed to {string}")
+    public void userSStatusIsChangedTo(String expectedStatus) {
+
+            BrowserUtils.sleep(10);
+
+            System.out.println(change_online_status.onlineStatusPageTitle.getText());
+            BrowserUtils.sleep(10);
+
+            Assert.assertTrue(change_online_status.onlineStatusPageTitle.isDisplayed());
+            Assert.assertEquals(expectedStatus,change_online_status.onlineStatusPageTitle.getText());
+        }
 
 }

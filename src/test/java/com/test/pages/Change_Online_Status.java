@@ -82,28 +82,6 @@ public class Change_Online_Status extends BasePage{
 
 
 
-    public List<WebElement> statusOptions;
-
-    public void ChangeOnlineStatus() {
-        statusOptions = Arrays.asList(away_Status, doNotDisturb_Status, invisible_Status, online_status);
-    }
-
-    public void theUserClicksTheStatusOption(String statusOption) {
-        BrowserUtils.sleep(10);
-
-        for (WebElement option : statusOptions) {
-            if (option.getAttribute("class").startsWith("user-status-online-select__label")) {
-                option.click();
-                break;
-            }
-        }
-
-        BrowserUtils.sleep(10);
-    }
-
-
-
-
 
 
 

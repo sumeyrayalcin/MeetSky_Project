@@ -22,23 +22,28 @@ Feature: online status and set a status message
   @wip
   Scenario: User changes Online Status
 
-    Given user is on the Online Status page
-    When  the user clicks the Away status option
-    Then the user's status changed to Away
+    #Given user is on the Online Status page
+    #When  the user clicks the Away status option
+    #Then the user's status changed to Away
+
+   #Given user is on the Online Status page
+   # When the user clicks the Do not disturb status option
+    #And user clicks set status message
+   # Then the user's status changed to Do not disturb
+
+    #Given user is on the Online Status page
+    #When  the user clicks the Invisible status option
+    #And user clicks set status message
+    #Then the user's status is changed to Invisible
+
+    #Given user is on the Online Status page
+    #When  the user clicks the Online status option
+    #Then the user's status changed to Online
 
     Given user is on the Online Status page
-    When the user clicks the Do not disturb status option
-    And user clicks set status message
-    Then the user's status changed to Do not disturb
+    When user clicks the  status option "<statusOption>"
+    Then user's status is changed to "<statusOption>"
 
-    Given user is on the Online Status page
-    When  the user clicks the Invisible status option
-    And user clicks set status message
-    Then the user's status is changed to Invisible
-
-    Given user is on the Online Status page
-    When  the user clicks the Online status option
-    Then the user's status changed to Online
 
 
     Scenario: User can set a status message from any default options
