@@ -26,12 +26,12 @@ Feature: online status and set a status message
     When  the user clicks the Away status option
     Then the user's status changed to Away
 
-   # Given user is on the Online Status page
+    Given user is on the Online Status page
     When the user clicks the Do not disturb status option
     And user clicks set status message
     Then the user's status changed to Do not disturb
 
-    #Given user is on the Online Status page
+    Given user is on the Online Status page
     When  the user clicks the Invisible status option
     And user clicks set status message
     Then the user's status is changed to Invisible
@@ -73,8 +73,9 @@ Feature: online status and set a status message
 
 
     Given user is on the Online Status page
-    When  the user sets a time to clear the status message automatically
-    Then the user's status message is automatically cleared after the specified time
+    When  the user clicks a time to clear the status message automatically
+      Then the user sets a time to clear the status message automatically
+    #Then the user's status message is automatically cleared after the specified time
 
 
     Given user is on the Online Status page
