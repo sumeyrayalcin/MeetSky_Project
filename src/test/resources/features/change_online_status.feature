@@ -20,7 +20,7 @@ Feature: online status and set a status message
       Given user is on the Online Status page
       Then user can view online status
   @wip
-  Scenario: User changes Online Status
+  Scenario Outline: User changes Online Status
 
     #Given user is on the Online Status page
     #When  the user clicks the Away status option
@@ -43,6 +43,12 @@ Feature: online status and set a status message
     Given user is on the Online Status page
     When user clicks the  status option "<statusOption>"
     Then user's status is changed to "<statusOption>"
+    Examples:
+    |statusOption   |
+    |  online       |
+    |    away       |
+    | do not disturb|
+
 
 
 

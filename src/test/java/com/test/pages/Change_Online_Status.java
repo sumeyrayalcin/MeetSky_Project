@@ -22,7 +22,7 @@ public class Change_Online_Status extends BasePage{
     }
 
 
-    @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-online')]")
+   @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-online')]")
     public WebElement online_status;
 
     @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-dnd')]")
