@@ -1,9 +1,13 @@
 package com.test.pages;
 
+import com.test.utilities.BrowserUtils;
 import com.test.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Change_Online_Status extends BasePage{
     public Change_Online_Status(){
@@ -18,18 +22,16 @@ public class Change_Online_Status extends BasePage{
     }
 
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[2]/div[1]/label")
-    public WebElement Online_status;
+    @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-online')]")
+    public WebElement online_status;
 
-
-
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[2]/div[3]/label")
+    @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-dnd')]")
     public WebElement doNotDisturb_Status;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[2]/div[2]/label")
+    @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-away')]")
     public WebElement away_Status;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[2]/div[2]/label")
+    @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-invisible')]")
     public WebElement invisible_Status;
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[5]/div[1]/span[2]")
@@ -52,9 +54,6 @@ public class Change_Online_Status extends BasePage{
 
 
 
-
-
-
     @FindBy(xpath = "//*[@id=\"expand\"]/div/div")
     public WebElement onlineStatusPageTitle;
 
@@ -72,7 +71,6 @@ public class Change_Online_Status extends BasePage{
     public WebElement sets_time_clear_status_message_automatically;
 
 
-
     @FindBy( linkText ="Clear status message")
     public WebElement clear_Status_Message;
 
@@ -83,6 +81,25 @@ public class Change_Online_Status extends BasePage{
 
 
 
+
+    public List<WebElement> statusOptions;
+
+    public void ChangeOnlineStatus() {
+        statusOptions = Arrays.asList(away_Status, doNotDisturb_Status, invisible_Status, online_status);
+    }
+
+    public void theUserClicksTheStatusOption(String statusOption) {
+        BrowserUtils.sleep(10);
+
+        for (WebElement option : statusOptions) {
+            if (option.getAttribute("class").startsWith("user-status-online-select__label")) {
+                option.click();
+                break;
+            }
+        }
+
+        BrowserUtils.sleep(10);
+    }
 
 
 

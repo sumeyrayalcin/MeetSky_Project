@@ -111,6 +111,24 @@ public class change_online_status_stepdef {
 
         Assert.assertTrue(change_online_status.onlineStatusPageTitle.isDisplayed());
     }
+    @When("the user clicks the Online status option")
+    public void theUserClicksTheOnlineStatusOption() {
+        BrowserUtils.sleep(10);
+
+        change_online_status.online_status.click();
+        BrowserUtils.sleep(10);
+    }
+    @Then("the user's status changed to Online")
+    public void theUserSStatusChangedToOnline() {
+        BrowserUtils.sleep(10);
+
+        System.out.println(change_online_status.onlineStatusPageTitle.getText());
+        BrowserUtils.sleep(10);
+
+        Assert.assertTrue(change_online_status.onlineStatusPageTitle.isDisplayed());
+
+
+    }
 
     @When("the user enters a custom status message In a meeting")
     public void theUserEntersACustomStatusMessageInAMeeting() {
@@ -292,6 +310,9 @@ public class change_online_status_stepdef {
         BrowserUtils.sleep(10);
 
     }
+
+
+
 
 
 }

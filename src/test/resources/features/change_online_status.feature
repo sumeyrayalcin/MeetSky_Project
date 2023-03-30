@@ -36,6 +36,9 @@ Feature: online status and set a status message
     And user clicks set status message
     Then the user's status is changed to Invisible
 
+    Given user is on the Online Status page
+    When  the user clicks the Online status option
+    Then the user's status changed to Online
 
 
     Scenario: User can set a status message from any default options
