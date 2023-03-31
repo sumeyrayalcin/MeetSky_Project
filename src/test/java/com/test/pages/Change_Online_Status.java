@@ -89,5 +89,8 @@ public class Change_Online_Status extends BasePage{
 
 
 
+    @FindBy(xpath = "//span[starts-with(@class,'predefined-status__message')]")
+    public List<WebElement> status_message;
+
 
 }

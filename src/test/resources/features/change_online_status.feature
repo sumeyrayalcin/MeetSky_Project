@@ -32,32 +32,20 @@ Feature: online status and set a status message
 
 
 
-    Scenario: User can set a status message from any default options
+    Scenario Outline: User can set a status message from any default options
 
-    Given user is on the Online Status page
-    When the user enters a custom status message In a meeting
-    Then the user's status message is changed to In a meeting
-
-    Given user is on the Online Status page
-    When the user enters a custom status message commuting
-
-    Then the user's status message is changed to commuting
-
-    Given user is on the Online Status page
-    When the user enters a custom status message Working remotely
-     # And user clicks set status message
-    Then the user's status message is changed to Working remotely
-
-    Given user is on the Online Status page
-    When  the user enters a custom status message Out sick
-    #  And user clicks set status message
-    Then the user's status message is changed to Out sick
+      Given user is on the Online Status page
+      When user clicks the  status option "<statusMessage>"
+      Then user's status is changed to "<statusMessage>"
+      Examples:
+        |statusMessage    |
+        |  In a meeting   |
+        |   Commuting     |
+        | Working remotely|
+        | Out sick        |
+        |  Vacationing    |
 
 
-    Given user is on the Online Status page
-    When the user enters a custom status message Vacationing
-   #   And user clicks set status message
-    Then the user's status message is changed to Vacationing
 
 
       Scenario: User can set a custom status message with also using any emoji option provided
@@ -66,15 +54,14 @@ Feature: online status and set a status message
 
 
 
-    Given user is on the Online Status page
-    When  the user clicks a time to clear the status message automatically
+      Given user is on the Online Status page
+      When  the user clicks a time to clear the status message automatically
       Then the user sets a time to clear the status message automatically
-    #Then the user's status message is automatically cleared after the specified time
+            #Then the user's status message is automatically cleared after the specified time
 
-
-    Given user is on the Online Status page
-    When the user click the Clear status message
-    Then the user's status message is now  empty
+        Given user is on the Online Status page
+        When the user click the Clear status message
+        Then the user's status message is now  empty
 
 
 
@@ -101,3 +88,28 @@ Feature: online status and set a status message
     #Given user is on the Online Status page
     #When  the user clicks the Online status option
     #Then the user's status changed to Online
+
+        #Given user is on the Online Status page
+        #When the user enters a custom status message In a meeting
+        #Then the user's status message is changed to In a meeting
+
+       # Given user is on the Online Status page
+        #When the user enters a custom status message commuting
+
+        #Then the user's status message is changed to commuting
+
+       # Given user is on the Online Status page
+       # When the user enters a custom status message Working remotely
+     # And user clicks set status message
+       # Then the user's status message is changed to Working remotely
+
+        #Given user is on the Online Status page
+        #When  the user enters a custom status message Out sick
+    #  And user clicks set status message
+       # Then the user's status message is changed to Out sick
+
+
+        #Given user is on the Online Status page
+        #When the user enters a custom status message Vacationing
+   #   And user clicks set status message
+        #Then the user's status message is changed to Vacationing
