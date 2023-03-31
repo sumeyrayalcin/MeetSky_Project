@@ -54,7 +54,7 @@ public class Change_Online_Status extends BasePage{
 
 
 
-    @FindBy(xpath = "//*[@id=\"expand\"]/div/div")
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div")
     public WebElement onlineStatusPageTitle;
 
   //  @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[4]/form/input")
@@ -80,8 +80,12 @@ public class Change_Online_Status extends BasePage{
 
 
 
+    @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status')]")
+    public List<WebElement> status;
 
 
+    @FindBy(xpath ="//*[@id=\"expanddiv\"]/ul/li[1]/div/a[2]")
+    public WebElement checkStatus;
 
 
 
