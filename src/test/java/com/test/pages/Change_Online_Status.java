@@ -87,10 +87,17 @@ public class Change_Online_Status extends BasePage{
     @FindBy(xpath ="//*[@id=\"expanddiv\"]/ul/li[1]/div/a[2]")
     public WebElement checkStatus;
 
+    @FindBy(xpath = "//div[@id='content']//button[contains(@class, 'status')]")
+    public WebElement statusOnDashboard;
 
 
-    @FindBy(xpath = "//span[starts-with(@class,'predefined-status__message')]")
+
+
+ @FindBy(xpath = "//span[starts-with(@class,'predefined-status__message')]")
     public List<WebElement> status_message;
 
+
+    @FindBy(xpath = "//*[@id=\"status-status\"]/li/div/button/text()")
+    public WebElement appears_status_message;
 
 }

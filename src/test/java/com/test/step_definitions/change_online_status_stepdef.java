@@ -317,10 +317,10 @@ public class change_online_status_stepdef {
 
     @When("user clicks the  status option {string}")
     public void userClicksTheStatusOption(String statusOption) {
-        List<WebElement> statusOptions;
+       // List<WebElement> statusOptions;
 
 
-        statusOptions = Arrays.asList(change_online_status.away_Status, change_online_status.doNotDisturb_Status, change_online_status.invisible_Status, change_online_status.online_status);
+     //   statusOptions = Arrays.asList(change_online_status.away_Status, change_online_status.doNotDisturb_Status, change_online_status.invisible_Status, change_online_status.online_status);
 
 
         BrowserUtils.sleep(5);
@@ -328,6 +328,7 @@ public class change_online_status_stepdef {
         for (WebElement option : change_online_status.status) {
             if (option.getAttribute("class").contains(statusOption.toLowerCase())) {
                 option.click();
+                change_online_status.setStatusMessage.click();
                 break;
 
             }
@@ -341,13 +342,37 @@ public class change_online_status_stepdef {
 
             BrowserUtils.sleep(5);
 
-            System.out.println(change_online_status.onlineStatusPageTitle.getText());
-            BrowserUtils.sleep(5);
+          //  System.out.println(change_online_status.onlineStatusPageTitle.getText());
+          //  BrowserUtils.sleep(5);
 
-            Assert.assertTrue(change_online_status.onlineStatusPageTitle.isDisplayed());
+          //  Assert.assertTrue(change_online_status.onlineStatusPageTitle.isDisplayed());
 
            // change_online_status.online_status.click();
-            Assert.assertEquals(statusOption.toLowerCase(),change_online_status.checkStatus.getText().toLowerCase());
+            Assert.assertEquals(statusOption,change_online_status.statusOnDashboard.getText().trim());
         }
 
+    @When("user clicks the  custom status message {string}")
+    public void userClicksTheCustomStatusMessage(String statusMessage) {
+
+       BrowserUtils.sleep(5);
+
+        for (WebElement option2 : change_online_status.status_message) {
+            if (option2.getAttribute("class").contains(statusMessage.toLowerCase())) {
+                option2.click();
+                change_online_status.setStatusMessage.click();
+                break;
+
+            }
+
+            BrowserUtils.sleep(5);
+        }
+    }
+
+    @Then("the user's status message is changed to {string}")
+    public void theUserSStatusMessageIsChangedTo(String statusMessage) {
+
+        BrowserUtils.sleep(5);
+        Assert.assertEquals(statusMessage,change_online_status.appears_status_message.getText().contains(statusMessage));
+
+    }
 }

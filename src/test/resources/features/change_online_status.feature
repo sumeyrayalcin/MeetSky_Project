@@ -13,9 +13,10 @@ Feature: online status and set a status message
   User can clear status message or set a time to clear the message automatically
 
 
-    Scenario: User can view Online Status
+  Scenario: User can view Online Status
       Given user is on the Online Status page
       Then user can view online status
+
   @wip
   Scenario Outline: User changes Online Status
 
@@ -25,30 +26,31 @@ Feature: online status and set a status message
     Then user's status is changed to "<statusOption>"
     Examples:
     |statusOption   |
-    |  Online       |
-    |    Away       |
-    | Do not disturb|
-    |Invisible     |
+    | Do not disturb |
+    | Online |
+    | Away |
+    | Invisible |
 
 
 
     Scenario Outline: User can set a status message from any default options
 
       Given user is on the Online Status page
-      When user clicks the  status option "<statusMessage>"
-      Then user's status is changed to "<statusMessage>"
+      When user clicks the custom status message "<statusMessage>"
+      Then the user's status message is changed to "<statusMessage>"
       Examples:
-        |statusMessage    |
-        |  In a meeting   |
-        |   Commuting     |
-        | Working remotely|
-        | Out sick        |
-        |  Vacationing    |
+        | statusMessage |
+        | In a meeting |
+        | Commuting |
+        | Working remotely |
+        | Out sick |
+        | Vacationing |
 
 
 
 
-      Scenario: User can set a custom status message with also using any emoji option provided
+  Scenario: User can set a custom status message with also using any emoji option provided
+
         Given user is on the Online Status page
         Then user can click a custom status message with also using any emoji option
 
