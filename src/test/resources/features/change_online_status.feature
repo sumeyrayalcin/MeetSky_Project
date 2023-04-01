@@ -69,49 +69,6 @@ Feature: online status and set a status message
 
 
 
-  #Background: For the scenarios in the feature file, user is expected to be on Online Status
-   # Given user is on the Online Status page
 
 
-         #Given user is on the Online Status page
-    #When  the user clicks the Away status option
-    #Then the user's status changed to Away
 
-   #Given user is on the Online Status page
-   # When the user clicks the Do not disturb status option
-    #And user clicks set status message
-   # Then the user's status changed to Do not disturb
-
-    #Given user is on the Online Status page
-    #When  the user clicks the Invisible status option
-    #And user clicks set status message
-    #Then the user's status is changed to Invisible
-
-    #Given user is on the Online Status page
-    #When  the user clicks the Online status option
-    #Then the user's status changed to Online
-
-        #Given user is on the Online Status page
-        #When the user enters a custom status message In a meeting
-        #Then the user's status message is changed to In a meeting
-
-       # Given user is on the Online Status page
-        #When the user enters a custom status message commuting
-
-        #Then the user's status message is changed to commuting
-
-       # Given user is on the Online Status page
-       # When the user enters a custom status message Working remotely
-     # And user clicks set status message
-       # Then the user's status message is changed to Working remotely
-
-        #Given user is on the Online Status page
-        #When  the user enters a custom status message Out sick
-    #  And user clicks set status message
-       # Then the user's status message is changed to Out sick
-
-
-        #Given user is on the Online Status page
-        #When the user enters a custom status message Vacationing
-   #   And user clicks set status message
-        #Then the user's status message is changed to Vacationing

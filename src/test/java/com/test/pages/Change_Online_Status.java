@@ -34,7 +34,7 @@ public class Change_Online_Status extends BasePage{
     @FindBy(xpath = "//label[starts-with(@class,'user-status-online-select__label icon-user-status-invisible')]")
     public WebElement invisible_Status;
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[5]/div[1]/span[2]")
+    @FindBy(linkText = "In a meeting")
     public WebElement inAMeeting_Status_Message;
 
     @FindBy(linkText ="Commuting" )
@@ -93,11 +93,15 @@ public class Change_Online_Status extends BasePage{
 
 
 
- @FindBy(xpath = "//span[starts-with(@class,'predefined-status__message')]")
+    @FindBy(xpath = "//span[starts-with(@class,'predefined-status__message')]")
     public List<WebElement> status_message;
 
 
-    @FindBy(xpath = "//*[@id=\"status-status\"]/li/div/button/text()")
+    @FindBy(xpath = "//*[@id=\"status-status\"]/li/div/button")
     public WebElement appears_status_message;
+
+
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[4]/form/input")
+    public WebElement written_status_message_inbox;
 
 }
