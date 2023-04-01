@@ -55,12 +55,12 @@ Feature: online status and set a status message
         Then user can click a custom status message with also using any emoji option
 
 
-
+Scenario: the user sets a time to clear the status message
       Given user is on the Online Status page
       When  the user clicks a time to clear the status message automatically
       Then the user sets a time to clear the status message automatically
             #Then the user's status message is automatically cleared after the specified time
-
+Scenario: Clear the status message
         Given user is on the Online Status page
         When the user click the Clear status message
         Then the user's status message is now  empty
