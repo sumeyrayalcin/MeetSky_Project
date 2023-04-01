@@ -67,11 +67,11 @@ public class Change_Online_Status extends BasePage{
     public WebElement any_chosen_emoji_in_online_status_message;
 
 
-    @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[6]/div/div[2]/input")
+    @FindBy(xpath = "//span[@class='multiselect__single']")
     public WebElement sets_time_clear_status_message_automatically;
 
 
-    @FindBy( linkText ="Clear status message")
+    @FindBy(xpath ="//button[@class='button-vue button-vue--text-only button-vue--vue-tertiary button-vue--wide']")
     public WebElement clear_Status_Message;
 
 
@@ -103,5 +103,9 @@ public class Change_Online_Status extends BasePage{
 
     @FindBy(xpath = "//*[@id=\"body-user\"]/div[7]/div[2]/div/div/div[4]/form/input")
     public WebElement written_status_message_inbox;
+
+
+    @FindBy(xpath = "//ul[@class='multiselect__content']/li[4]/span/div")
+   public WebElement setting_time;
 
 }

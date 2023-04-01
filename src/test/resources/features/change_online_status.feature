@@ -1,5 +1,5 @@
 
-
+@wip
 Feature: online status and set a status message
 
   User Story :
@@ -17,7 +17,7 @@ Feature: online status and set a status message
       Given user is on the Online Status page
       Then user can view online status
 
-  @wip
+
   Scenario Outline: User changes Online Status
 
 
